@@ -5,10 +5,10 @@ reddit = praw.Reddit(client_id=config.c_id,client_secret=config.c_s,user_agent=c
 while True:
     try:
         subreddit = reddit.subreddit(random.choice(config.subs))
-        print('subredit is',subreddit)
+        print('Random subreddit is:',subreddit)
         submission = random.choice(list(subreddit.top('all', limit=None)))
         if submission.domain in ['i.redd.it', 'i.imgur.com']:
-            print('is domain')
+            print('Domain is in our list!')
             file_name = submission.url.replace('https://i.imgur.com/','').replace('https://i.redd.it/','')
             response = requests.get(submission.url)
             file = open(file_name, "wb")
@@ -20,13 +20,14 @@ while True:
                 im = pyimgur.Imgur(config.i_id, access_token=access_token, refresh_token=refresh_token)
             except FileNotFoundError as ex:
                 webbrowser.open(pyimgur.Imgur(CLIENT_ID).authorization_url('pin'))
-                pin = input("What is the pin? ")
+                pin = input("Gimme the pin: ")
                 access_token, refresh_token = im.exchange_pin(pin)
                 with open('tokens.txt', 'w') as f:
                     f.write(f'{access_token} {refresh_token}')
             uploaded_image = im.upload_image(file_name).submit_to_gallery(title=submission.title)
-            print('submitted')
+            print('Submitted!')
             os.remove(file_name)
+            print('Deleted File')
                         
         elif submission.domain not in domains:
             print('domain is not in domains :(')
