@@ -19,9 +19,7 @@ while True:
                     access_token, refresh_token = f.read().strip().split()
                 im = pyimgur.Imgur(config.i_id, access_token=access_token, refresh_token=refresh_token)
             except FileNotFoundError as ex:
-                im = pyimgur.Imgur(CLIENT_ID)
-                auth_url = im.authorization_url('pin')
-                webbrowser.open(auth_url)
+                webbrowser.open(pyimgur.Imgur(CLIENT_ID).authorization_url('pin'))
                 pin = input("What is the pin? ")
                 access_token, refresh_token = im.exchange_pin(pin)
                 with open('tokens.txt', 'w') as f:
@@ -29,7 +27,6 @@ while True:
             uploaded_image = im.upload_image(file_name).submit_to_gallery(title=submission.title)
             print('submitted')
             os.remove(file_name)
-            subreddit = reddit.subreddit(random.choice(config.subs))
                         
         elif submission.domain not in domains:
             print('domain is not in domains :(')
