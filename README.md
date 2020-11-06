@@ -8,7 +8,7 @@
 ![](/pics/post_of_the_week.png)
 #
 - I was able to get about 10,000 points a day using this bot
-- Got the "CONTRIBUTOR", "EPIC", "BEST POST OF THE DAY" and "BEST POST OF THE WEEK" trophies.
+- Got the "Contributor", "Epic" and "Best Post of the Day" trophies.
 - I managed to unlock all of Imgur's medallions
 - 500 points an hour average
 - At least one post a day makes it to most viral
