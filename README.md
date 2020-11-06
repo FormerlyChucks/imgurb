@@ -13,7 +13,7 @@
 - 500 points an hour average
 - At least one post a day makes it to most viral
 - For a setup guide, see [here](https://mr-steal-your-script.github.io/ImgurBot.html?)
-- I reccommend occasionally the bot's posts, as it occasionally posts things that are against Imgur's ToS.
+- I reccommend occasionally checking the bot's posts, as it occasionally posts things that are against Imgur's ToS.
 #
 ![](/pics/copper.png)
 ![](/pics/bronze.png)
