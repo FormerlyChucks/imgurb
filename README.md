@@ -18,3 +18,6 @@
 ![](/pics/copper.png)
 ![](/pics/bronze.png)
 ![](/pics/iron.png)
+![](/pics/silver.png)
+![](/pics/gold.png)
+![](/pics/imgurite.png)
