@@ -13,3 +13,7 @@
 ![](/pics/epic.png)
 ![](/pics/post_of_the_day.png)
 ![](/pics/post_of_the_week.png)
+#
+![](/pics/copper.png)
+![](/pics/bronze.png)
+![](/pics/iron.png)
