@@ -1,6 +1,10 @@
-import os, time, praw, random, config, pyimgur, requests, traceback, webbrowser
+import os, time, praw, config, random, pyimgur, requests, traceback, webbrowser
 
-reddit = praw.Reddit(client_id=config.c_id,client_secret=config.c_s,user_agent=config.u_a,username=config.un,password=config.pw)
+reddit = praw.Reddit(client_id=config.c_id,
+                     client_secret=config.c_s,
+                     user_agent=config.u_a,
+                     username=config.un,
+                     password=config.pw)
 
 while True:
     try:
