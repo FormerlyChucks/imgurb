@@ -7,7 +7,7 @@ while True:
         subreddit = reddit.subreddit(random.choice(config.subs))
         print('Random Subreddit Is:',subreddit)
         submission = random.choice(list(subreddit.top('all', limit=None)))
-        if submission.domain in ['i.redd.it', 'i.imgur.com']:
+        if submission.domain in ['i.redd.it', 'i.imgur.com'] and '.gifv' not in submission.url:
             print('Imgur/Reddit Domain!')
             file_name = submission.url.replace('https://i.imgur.com/','').replace('https://i.redd.it/','')
             response = requests.get(submission.url)
