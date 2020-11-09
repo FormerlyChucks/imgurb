@@ -14,9 +14,9 @@
 - For a setup guide, see [here](https://mr-steal-your-script.github.io/ImgurBot.html?)
 - I reccommend occasionally checking the bot's posts, as it occasionally posts things that are against Imgur's ToS.
 #
-![](/pics/copper.png)
-![](/pics/bronze.png)
-![](/pics/iron.png)
-![](/pics/silver.png)
-![](/pics/gold.png)
-![](/pics/imgurite.png)
+![](https://i.imgur.com/AGm79ku.png)
+![](https://i.imgur.com/YQShiOz.png)
+![](https://i.imgur.com/rJ83jCO.png)
+![](https://i.imgur.com/xDx60Ay.png)
+![](https://i.imgur.com/zmKhBga.png)
+![](https://i.imgur.com/pTqld0d.png)
