@@ -2,9 +2,9 @@
 
 **Reposts things from Reddit to Imgur**
 #
-![](/pics/contributor.png)
-![](/pics/epic.png)
-![](/pics/post_of_the_day.png)
+![](https://i.imgur.com/gtthBWe.png)
+![](https://i.imgur.com/a1t4ts1.png)
+![](https://i.imgur.com/a6vlf6p.png)
 #
 - I was able to get about 10,000 points a day using this bot
 - Got the "Contributor", "Epic" and "Best Post of the Day" trophies.
