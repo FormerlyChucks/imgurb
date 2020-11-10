@@ -11,7 +11,6 @@
 - Unlocked all of Imgur's medallions
 - 1,000 points an hour average
 - At least three posts a day makes it to most viral
-- For a setup guide, see [here](https://mr-steal-your-script.github.io/ImgurBot.html?)
 #
 ![](https://i.imgur.com/Xa08yPP.png)
 ![](https://i.imgur.com/5QZY9in.png)
@@ -19,3 +18,5 @@
 ![](https://i.imgur.com/B7aJuVJ.png)
 ![](https://i.imgur.com/BojmcQc.png)
 ![](https://i.imgur.com/EARWHAF.png)
+#
+- For a setup guide, see [here](https://mr-steal-your-script.github.io/ImgurBot.html?)
