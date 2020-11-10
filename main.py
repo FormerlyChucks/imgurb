@@ -31,8 +31,7 @@ while True:
                 access_token, refresh_token = im.exchange_pin(pin)
                 with open('tokens.txt', 'w') as f:
                     f.write(f'{access_token} {refresh_token}')
-            uploaded_image = im.upload_image(file_name, title=submission.title)
-            uploaded_image.submit_to_gallery(title=submission.title)
+            im.upload_image(file_name).submit_to_gallery(title=submission.title)
             print('Uploaded To Gallery')
             os.remove(file_name)
             print('Deleted File')
