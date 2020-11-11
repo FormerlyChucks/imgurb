@@ -25,7 +25,7 @@ while True:
                     with open('tokens.txt') as f:
                         access_token, refresh_token = f.read().strip().split()
                     im = pyimgur.Imgur(config.i_id, access_token=access_token, refresh_token=refresh_token)
-                except FileNotFoundError as ex:
+                except FileNotFoundError:
                     im = pyimgur.Imgur(config.i_id)
                     webbrowser.open(im.authorization_url('pin'))
                     pin = input("What's the pin?: ")
