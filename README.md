@@ -2,8 +2,6 @@
 
 **Reposts things from Reddit to Imgur**
 
-Something appears to be wrong, I'd suggest not using this right now :(
-
 #
 ![](https://i.imgur.com/QNsWcHG.png)
 ![](https://i.imgur.com/M2X2Mgt.png)
