@@ -36,7 +36,7 @@ while True:
             time.sleep(300)
         else:
             print('Submission Not Actionable :(')
-            time.sleep(10)
+            time.sleep(60)
     except Exception:
         print(traceback.format_exc())
         time.sleep(60)     
