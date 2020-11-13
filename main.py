@@ -44,9 +44,9 @@ while True:
             elif submission.domain not in ['i.redd.it', 'i.imgur.com']:
                 print('Not An Imgur/Reddit Domain :(')
                 time.sleep(10)
-        except Exception:
-            print(traceback.format_exc())
-            time.sleep(60)     
-        except KeyboardInterrupt:
-            print('Shutting Down :(')
-            quit()
+    except Exception:
+        print(traceback.format_exc())
+        time.sleep(60)     
+    except KeyboardInterrupt:
+        print('Shutting Down :(')
+        quit()
