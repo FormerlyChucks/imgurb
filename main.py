@@ -1,4 +1,4 @@
-import os, time, praw, config, random, pyimgur, requests, traceback, webbrowser
+import os, time, praw, emoji, config, random, pyimgur, requests, traceback, webbrowser
 
 reddit = praw.Reddit(client_id=config.c_id,
                      client_secret=config.c_s,
