@@ -14,6 +14,7 @@ while True:
         submission = random.choice(submissions)
         with open('ids.txt') as db:
             if submission.id not in db.read() and submission.domain in config.domains and '.gifv' not in submission.url:
+                no_emoji = emoji.demojize(submission.title)
                 print('Imgur/Reddit Domain!')
                 file_name = submission.url.replace('https://i.imgur.com/','').replace('https://i.redd.it/','')
                 response = requests.get(submission.url)
@@ -32,7 +33,7 @@ while True:
                     access_token, refresh_token = im.exchange_pin(pin)
                     with open('tokens.txt', 'w') as f:
                         f.write(f'{access_token} {refresh_token}')
-                im.upload_image(file_name).submit_to_gallery(title=submission.title)
+                im.upload_image(file_name).submit_to_gallery(title=no_emoji)
                 print('Uploaded To Gallery')
                 with open("ids.txt", "r") as ids:
                     ids.write(submission.id)
