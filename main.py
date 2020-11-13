@@ -1,4 +1,4 @@
-import os, time, praw, config, random, pyimgur, requests, traceback, webbrowser
+import os, time, praw, emoji, config, random, pyimgur, requests, traceback, webbrowser
 
 reddit = praw.Reddit(client_id=config.c_id,
                      client_secret=config.c_s,
@@ -11,6 +11,7 @@ while True:
         submissions = list(subreddit.top('all', limit=1000))
         submission = random.choice(submissions)
         if submission.domain in config.domains and '.gifv' not in submission.url:
+            no_emoji = str(emoji.demojize(submission.title))
             print('Imgur/Reddit Domain!')
             file_name = submission.url.replace('https://i.imgur.com/','').replace('https://i.redd.it/','')
             response = requests.get(submission.url)
@@ -29,7 +30,7 @@ while True:
                 access_token, refresh_token = im.exchange_pin(pin)
                 with open('tokens.txt', 'w') as f:
                     f.write(f'{access_token} {refresh_token}')
-            im.upload_image(file_name).submit_to_gallery(title=submission.title)
+            im.upload_image(file_name).submit_to_gallery(title=no_emoji)
             print('Uploaded To Gallery')
             os.remove(file_name)
             print('Deleted File')
