@@ -41,7 +41,7 @@ while True:
                 os.remove(file_name)
                 print('Deleted File')
                 time.sleep(300)
-            elif submission.domain not in ['i.redd.it', 'i.imgur.com']:
+            else:
                 print('Not An Imgur/Reddit Domain :(')
                 time.sleep(10)
     except Exception:
