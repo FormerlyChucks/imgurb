@@ -32,6 +32,8 @@ while True:
                     f.write(f'{access_token} {refresh_token}')
             im.upload_image(file_name).submit_to_gallery(title=no_emoji)
             print('Uploaded To Gallery')
+            with open("ids.txt", "r") as file:
+              f.write(submission.id)
             os.remove(file_name)
             print('Deleted File')
             time.sleep(300)
