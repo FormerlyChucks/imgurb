@@ -28,14 +28,14 @@ while True:
                     except FileNotFoundError:
                         im = pyimgur.Imgur(config.i_id)
                         webbrowser.open(im.authorization_url('pin'))
-                        pin = input("What's the pin?: ")
+                        pin = input('Gimme the pin: ')
                         access_token, refresh_token = im.exchange_pin(pin)
                         with open('tokens.txt', 'w') as f:
                             f.write(f'{access_token} {refresh_token}')
                     im.upload_image(file_name).submit_to_gallery(title=no_emoji)
                     print('Uploaded To Gallery')
-                    with open("ids.txt", "a") as file:
-                        file.write(submission.id + "\n")
+                    with open('ids.txt', 'a') as file:
+                        file.write(submission.id + '\n')
                     os.remove(file_name)
                     print('Deleted File')
                     time.sleep(300)
