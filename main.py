@@ -32,7 +32,8 @@ while True:
                         access_token, refresh_token = im.exchange_pin(pin)
                         with open('tokens.txt', 'w') as f:
                             f.write(f'{access_token} {refresh_token}')
-                    im.upload_image(file_name).submit_to_gallery(title=no_emoji)
+                    image = im.upload_image(file_name)
+                    image.submit_to_gallery(title=no_emoji)
                     print('Uploaded To Gallery')
                     with open('ids.txt', 'a') as file:
                         file.write(submission.id + '\n')
