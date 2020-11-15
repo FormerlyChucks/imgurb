@@ -13,7 +13,8 @@ while True:
         if submission.domain in config.domains and '.gifv' not in submission.url:
             with open('ids.txt') as db:
                 if submission.id not in db.read():
-                    no_emoji = str(emoji.demojize(submission.title))
+                    demoji = str(emoji.demojize(submission.title))
+                    no_emoji = demoji.split(':')[0]
                     print('Imgur/Reddit Domain!')
                     file_name = submission.url.replace('https://i.imgur.com/','').replace('https://i.redd.it/','')
                     response = requests.get(submission.url)
