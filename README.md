@@ -3,9 +3,9 @@
 **Reposts things from Reddit to Imgur**
 
 #
-![](https://i.imgur.com/QNsWcHG.png)
-![](https://i.imgur.com/M2X2Mgt.png)
-![](https://i.imgur.com/XaCjin4.png)
+![](https://i.imgur.com/dyrQgzG.png)
+![](https://i.imgur.com/Li46K6K.png)
+![](https://i.imgur.com/YluJh5q.png)
 #
 - Average 50,000 points a day
 - Got the "Contributor", "Epic" and "Best Post of the Day" trophies.
