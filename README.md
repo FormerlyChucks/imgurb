@@ -14,9 +14,9 @@
 - At least three posts a day makes it to most viral
 - For a setup guide, see [here](https://mr-steal-your-script.github.io/ImgurBot.html?)
 #
-![](https://i.imgur.com/Xa08yPP.png)
-![](https://i.imgur.com/5QZY9in.png)
-![](https://i.imgur.com/K7Mtl2a.png)
-![](https://i.imgur.com/B7aJuVJ.png)
-![](https://i.imgur.com/BojmcQc.png)
-![](https://i.imgur.com/EARWHAF.png)
+![](https://i.imgur.com/M9xfNiJ.png)
+![](https://i.imgur.com/Pm2bnoo.png)
+![](https://i.imgur.com/fNz8Run.png)
+![](https://i.imgur.com/wCUIlbY.png)
+![](https://i.imgur.com/DNWgQLT.png)
+![](https://i.imgur.com/dAjtWeK.png)
