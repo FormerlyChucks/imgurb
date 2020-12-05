@@ -1,16 +1,25 @@
-import os, time, praw, emoji, config, random, pyimgur, requests, traceback, webbrowser
+import os, time, praw, yaml, emoji, random, pyimgur, requests, traceback, webbrowser
 
-reddit = praw.Reddit(client_id=config.c_id,
-                     client_secret=config.c_s,
-                     user_agent=config.u_a)
+with open("config.yaml") as config_file:
+    config = yaml.safe_load(config_file)
+    client_id = config["client_id"]
+    client_secret = config["client_secret"]
+    user_agent = config["user_agent"]
+    domains = config["domains"]
+    subs = config["subs"]
+    imgur_id = config["imgur_id"]
+    
+reddit = praw.Reddit(client_id=client_id,
+                     client_secret=client_secret,
+                     user_agent=user_agent)
 
 while True:
     try:
-        subreddit = reddit.subreddit(random.choice(config.subs))
+        subreddit = reddit.subreddit(random.choice(subs))
         print('Random Subreddit Is:',subreddit)
         submissions = list(subreddit.top('all', limit=1000))
         submission = random.choice(submissions)
-        if submission.domain in config.domains and '.gifv' not in submission.url:
+        if submission.domain in domains and '.gifv' not in submission.url:
             with open('ids.txt') as db:
                 if submission.id not in db.read():
                     demoji = str(emoji.demojize(submission.title))
@@ -25,9 +34,9 @@ while True:
                     try:
                         with open('tokens.txt') as f:
                             access_token, refresh_token = f.read().strip().split()
-                        im = pyimgur.Imgur(config.i_id, access_token=access_token, refresh_token=refresh_token)
+                        im = pyimgur.Imgur(imgur_id, access_token=access_token, refresh_token=refresh_token)
                     except FileNotFoundError:
-                        im = pyimgur.Imgur(config.i_id)
+                        im = pyimgur.Imgur(imgur_id)
                         webbrowser.open(im.authorization_url('pin'))
                         pin = input('Gimme the pin: ')
                         access_token, refresh_token = im.exchange_pin(pin)
