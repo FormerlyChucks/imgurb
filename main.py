@@ -23,7 +23,6 @@ while True:
             with open('ids.txt') as db:
                 if submission.id not in db.read():
                     demoji = str(emoji.demojize(submission.title))
-                    no_emoji = demoji.split(':')[0]
                     print('Imgur/Reddit Domain!')
                     file_name = submission.url.replace('https://i.imgur.com/','').replace('https://i.redd.it/','')
                     response = requests.get(submission.url)
@@ -43,7 +42,7 @@ while True:
                         with open('tokens.txt', 'w') as f:
                             f.write(f'{access_token} {refresh_token}')
                     image = im.upload_image(file_name)
-                    image.submit_to_gallery(title=no_emoji)
+                    image.submit_to_gallery(title=demoji)
                     print('Uploaded To Gallery')
                     with open('ids.txt', 'a') as file:
                         file.write(submission.id + '\n')
