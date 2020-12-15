@@ -8,7 +8,7 @@ with open("config.yaml") as config_file:
     domains = config["domains"]
     subs = config["subs"]
     imgur_id = config["imgur_id"]
-    
+
 reddit = praw.Reddit(client_id=client_id,
                      client_secret=client_secret,
                      user_agent=user_agent)
@@ -41,8 +41,8 @@ while True:
                         access_token, refresh_token = im.exchange_pin(pin)
                         with open('tokens.txt', 'w') as f:
                             f.write(f'{access_token} {refresh_token}')
-                    image = im.upload_image(file_name)
-                    image.submit_to_gallery(title=demoji)
+                    img = im.upload_image(file_name)
+                    img.submit_to_gallery(title=demoji)
                     print('Uploaded To Gallery')
                     with open('ids.txt', 'a') as file:
                         file.write(submission.id + '\n')
