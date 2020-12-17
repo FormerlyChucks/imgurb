@@ -1,7 +1,5 @@
 # PointWhore
 
-## About
-
 This bot reposts things from Reddit to Imgur.
 
 ## Setup
