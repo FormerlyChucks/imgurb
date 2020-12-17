@@ -20,17 +20,6 @@ This bot reposts things from Reddit to Imgur.
 - Fill in the rest of the form
 
 ---
-Edit the configuration file:
-
-    nano config.py
-
-- Edit "c_id" with the "personal use script"
-- Edit "c_s" with the secret
-- Edit "u_a" with the bot's description
-- Edit "i_id" with your Imgur client id
-- For the list of subs, add some subs that you wish to repost from
-- Save the file (ctrl x and Y)
-----
 
 ## Setup
 
@@ -44,7 +33,17 @@ You'll need a Linux distro. Any distro that supports Python, Nano, Pip3 and Git 
 
     pip3 install -r requirements.txt
 
+Edit the configuration file:
 
+    nano config.py
+
+- Edit "c_id" with the "personal use script"
+- Edit "c_s" with the secret
+- Edit "u_a" with the bot's description
+- Edit "i_id" with your Imgur client id
+- For the list of subs, add some subs that you wish to repost from
+- Save the file (ctrl x and Y)
+----
 
 ## Run the bot:
 
