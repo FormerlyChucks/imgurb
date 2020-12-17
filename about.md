@@ -4,23 +4,6 @@
 
 This bot reposts things from Reddit to Imgur.
 
-## Getting API Keys
-
-### Imgur
-
-- Go to [/oauth2/addclient](https://api.imgur.com/oauth2/addclient)
-- Fill in the form and get your Imgur client ID.
-
-
-### Reddit
-
-- Go to [/prefs/apps](https://old.reddit.com/prefs/apps)
-- Select "are you a developer? create an app..."
-- Name it whatever you want to, but select "script"
-- Fill in the rest of the form
-
----
-
 ## Setup
 
 You'll need a Linux distro. Any distro that supports Python, Nano, Pip3 and Git will work. It might work on Windows/Mac, but I haven't tested that out.
@@ -32,6 +15,21 @@ You'll need a Linux distro. Any distro that supports Python, Nano, Pip3 and Git 
 ### Install the needed packages:
 
     pip3 install -r requirements.txt
+
+### Getting API Keys
+
+#### Imgur
+
+- Go to [/oauth2/addclient](https://api.imgur.com/oauth2/addclient)
+- Fill in the form and get your Imgur client ID.
+
+
+#### Reddit
+
+- Go to [/prefs/apps](https://old.reddit.com/prefs/apps)
+- Select "are you a developer? create an app..."
+- Name it whatever you want to, but select "script"
+- Fill in the rest of the form
 
 Edit the configuration file:
 
