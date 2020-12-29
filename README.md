@@ -29,7 +29,7 @@ You'll need a Linux distro. Any distro that supports Python, Nano, Pip3 and Git 
 - Name it whatever you want to, but select "script"
 - Fill in the rest of the form
 
-Edit the configuration file:
+### Edit the configuration file:
 
     nano config.yaml
 
