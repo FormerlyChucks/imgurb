@@ -2,20 +2,16 @@ import os, time, praw, yaml, emoji, random, pyimgur, requests, traceback, webbro
 
 with open("config.yaml") as config_file:
     config = yaml.safe_load(config_file)
-    client_id = config["client_id"]
-    client_secret = config["client_secret"]
-    user_agent = config["user_agent"]
     domains = config["domains"]
-    subs = config["subs"]
     imgur_id = config["imgur_id"]
 
-reddit = praw.Reddit(client_id=client_id,
-                     client_secret=client_secret,
-                     user_agent=user_agent)
+reddit = praw.Reddit(client_id=config["client_id"],
+                     client_secret=config["client_secret"],
+                     user_agent=config["user_agent"])
 
 while True:
     try:
-        subreddit = reddit.subreddit(random.choice(subs))
+        subreddit = reddit.subreddit(random.choice(config["subs"]))
         print('Random Subreddit Is:',subreddit)
         submissions = list(subreddit.top('all', limit=1000))
         submission = random.choice(submissions)
