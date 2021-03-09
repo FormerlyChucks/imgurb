@@ -34,10 +34,14 @@ def upload(file, title):
 def delete_file(file):
     os.remove(file)
 
+def pick_sub(sub_list):
+    subreddit = reddit.subreddit(random.choice(sub_list))
+    return subreddit
+
 while True:
     try:
-        subreddit = reddit.subreddit(random.choice(subs))
-        print('Random Subreddit Is:',subreddit)
+        pick_sub(sub_list=subs)
+        print('Random Subreddit Is:',pick_sub)
         submissions = list(subreddit.top('all', limit=1000))
         submission = random.choice(submissions)
         if submission.domain in domains and '.gifv' not in submission.url:
