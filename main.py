@@ -1,4 +1,4 @@
-import os, time, praw, yaml, emoji, random, pyimgur, requests, traceback, webbrowser
+import os, time, praw, yaml, emoji, random, pyimgur, requests, traceback, webbrowser, downsyndrome
 
 with open("config.yaml") as config_file:
     config = yaml.safe_load(config_file)
@@ -20,11 +20,8 @@ while True:
                 if submission.id not in db.read():
                     demoji = str(emoji.demojize(submission.title))
                     print('Imgur/Reddit Domain!')
-                    file_name = submission.url.replace('https://i.imgur.com/','').replace('https://i.redd.it/','')
-                    response = requests.get(submission.url)
-                    file = open(file_name, "wb")
-                    file.write(response.content)
-                    file.close()
+                    file = submission.url.replace('https://i.imgur.com/','').replace('https://i.redd.it/','')
+                    downsyndrome.download(url=submission.url, file_name=file)
                     print('Downloaded Image')
                     try:
                         with open('tokens.txt') as f:
