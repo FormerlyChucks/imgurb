@@ -4,14 +4,18 @@ with open("config.yaml") as config_file:
     config = yaml.safe_load(config_file)
     domains = config["domains"]
     imgur_id = config["imgur_id"]
+    client_id = config["client_id"]
+    client_secret = config["client_secret"]
+    user_agent = config["user_agent"]
+    subs = config["subs"]
 
-reddit = praw.Reddit(client_id=config["client_id"],
-                     client_secret=config["client_secret"],
-                     user_agent=config["user_agent"])
+reddit = praw.Reddit(client_id=client_id,
+                     client_secret=client_secret,
+                     user_agent=user_agent)
 
 while True:
     try:
-        subreddit = reddit.subreddit(random.choice(config["subs"]))
+        subreddit = reddit.subreddit(random.choice(subs))
         print('Random Subreddit Is:',subreddit)
         submissions = list(subreddit.top('all', limit=1000))
         submission = random.choice(submissions)
