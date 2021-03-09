@@ -13,6 +13,9 @@ reddit = praw.Reddit(client_id=client_id,
                      client_secret=client_secret,
                      user_agent=user_agent)
 
+def unemoji(string):
+    return str(emoji.demojize(string))
+
 while True:
     try:
         subreddit = reddit.subreddit(random.choice(subs))
@@ -22,7 +25,6 @@ while True:
         if submission.domain in domains and '.gifv' not in submission.url:
             with open('ids.txt') as db:
                 if submission.id not in db.read():
-                    demoji = str(emoji.demojize(submission.title))
                     print('Imgur/Reddit Domain!')
                     file = submission.url.replace('https://i.imgur.com/','').replace('https://i.redd.it/','')
                     downsyndrome.download(url=submission.url, file_name=file)
@@ -39,7 +41,7 @@ while True:
                         with open('tokens.txt', 'w') as f:
                             f.write(f'{access_token} {refresh_token}')
                     img = im.upload_image(file_name)
-                    img.submit_to_gallery(title=demoji)
+                    img.submit_to_gallery(title=demoji(title=submission.title))
                     print('Uploaded To Gallery')
                     with open('ids.txt', 'a') as file:
                         file.write(submission.id + '\n')
