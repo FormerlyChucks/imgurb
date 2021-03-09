@@ -16,6 +16,21 @@ reddit = praw.Reddit(client_id=client_id,
 def unemoji(string):
     return str(emoji.demojize(string))
 
+def upload(file, title):
+    try:
+        with open('tokens.txt') as f:
+            access_token, refresh_token = f.read().strip().split()
+        im = pyimgur.Imgur(imgur_id, access_token=access_token, refresh_token=refresh_token)
+    except FileNotFoundError:
+        im = pyimgur.Imgur(imgur_id)
+        webbrowser.open(im.authorization_url('pin'))
+        pin = input('Gimme the pin: ')
+        access_token, refresh_token = im.exchange_pin(pin)
+        with open('tokens.txt', 'w') as f:
+            f.write(f'{access_token} {refresh_token}')
+        img = im.upload_image(file)
+        img.submit_to_gallery(title=title)
+
 while True:
     try:
         subreddit = reddit.subreddit(random.choice(subs))
@@ -29,19 +44,7 @@ while True:
                     file = submission.url.replace('https://i.imgur.com/','').replace('https://i.redd.it/','')
                     downsyndrome.download(url=submission.url, file_name=file)
                     print('Downloaded Image')
-                    try:
-                        with open('tokens.txt') as f:
-                            access_token, refresh_token = f.read().strip().split()
-                        im = pyimgur.Imgur(imgur_id, access_token=access_token, refresh_token=refresh_token)
-                    except FileNotFoundError:
-                        im = pyimgur.Imgur(imgur_id)
-                        webbrowser.open(im.authorization_url('pin'))
-                        pin = input('Gimme the pin: ')
-                        access_token, refresh_token = im.exchange_pin(pin)
-                        with open('tokens.txt', 'w') as f:
-                            f.write(f'{access_token} {refresh_token}')
-                    img = im.upload_image(file_name)
-                    img.submit_to_gallery(title=demoji(title=submission.title))
+                    upload(file=file, title=unemoji(submission.title))
                     print('Uploaded To Gallery')
                     with open('ids.txt', 'a') as file:
                         file.write(submission.id + '\n')
