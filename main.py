@@ -40,8 +40,8 @@ def pick_sub(sub_list):
 
 while True:
     try:
-        pick_sub(sub_list=subs)
-        print('Random Subreddit Is:',pick_sub)
+        sr = pick_sub(sub_list=subs)
+        print('Random Subreddit Is:',sr)
         submissions = list(subreddit.top('all', limit=1000))
         submission = random.choice(submissions)
         if submission.domain in domains and '.gifv' not in submission.url:
