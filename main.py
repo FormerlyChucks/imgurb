@@ -42,7 +42,7 @@ while True:
     try:
         sr = pick_sub(sub_list=subs)
         print('Random Subreddit Is:',sr)
-        submissions = list(subreddit.top('all', limit=1000))
+        submissions = list(sr.top('all', limit=1000))
         submission = random.choice(submissions)
         if submission.domain in domains and '.gifv' not in submission.url:
             with open('ids.txt') as db:
