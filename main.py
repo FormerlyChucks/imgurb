@@ -31,9 +31,6 @@ def upload(file, title):
         img = im.upload_image(file)
         img.submit_to_gallery(title=title)
 
-def delete_file(file):
-    os.remove(file)
-
 def pick_sub(sub_list):
     subreddit = reddit.subreddit(random.choice(sub_list))
     return subreddit
@@ -53,9 +50,9 @@ while True:
                     print('Downloaded Image')
                     upload(file=file, title=unemoji(submission.title))
                     print('Uploaded To Gallery')
-                    with open('ids.txt', 'a') as file:
-                        file.write(submission.id + '\n')
-                    delete_file(file=file)
+                    with open('ids.txt', 'a') as dbfile:
+                        dbfile.write(submission.id + '\n')
+                    os.remove(file)
                     print('Deleted File')
                     time.sleep(300)
                 elif submission.id in db.read():
