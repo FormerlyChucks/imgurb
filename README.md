@@ -1,5 +1,7 @@
 # PointWhore
 
+![](https://s.imgur.com/images/trophies/the_more_you_know.png)
+
 This bot reposts things from Reddit to Imgur.
 
 ## Setup
