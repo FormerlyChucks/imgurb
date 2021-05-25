@@ -1,6 +1,6 @@
 The reason you saw that post twice.
 
-![](https://i.imgur.com/hCGcFoV.png)
+![](https://i.imgur.com/dMfIQQT.png)
 
 ## Setup
 
