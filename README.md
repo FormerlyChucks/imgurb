@@ -1,6 +1,10 @@
+# imgurb
+
 ![](badge.png)
 
-## Set-up
+Repost old reddit posts to imgur for imaginary internet points 🤤
+
+# Set-up
 
 **Download the bot, change into the directory:**
 
