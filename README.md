@@ -6,7 +6,7 @@ The reason you saw that post twice.
 
 **Download the bot, change into the directory:**
 
-    git clone https://github.com/IThinkImOKAY/PointWhore && cd PointWhore
+    git clone https://github.com/IThinkImOKAY/imgurb && cd imgurb
 
 **Install the needed packages:**
 
@@ -17,7 +17,7 @@ The reason you saw that post twice.
 - You can get your Imgur Credentials From [Here](https://api.imgur.com/oauth2/addclient)
 - Follow [James Briggs' Guide](https://towardsdatascience.com/how-to-use-the-reddit-api-in-python-5e05ddfd1e5c) To Get Your Reddit API Keys
 
-**Edit the configuration file:**
+**Edit lines 3-7:**
 
 - "client_id" is your reddit client ID
 - "client_secret" is your reddit client secret
