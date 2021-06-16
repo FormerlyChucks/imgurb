@@ -24,10 +24,15 @@ subreddit = reddit.subreddit(random.choice(subs))
 submissions = list(subreddit.top('all', limit=1000))
 submissions = [submission for submission in submissions if submission.domain in domains and '.gifv' not in submission.url and submission.over_18==False]
 submission = random.choice(submissions)
+print('Submission ID:',submission.id)
 fileName = submission.url.replace('https://i.imgur.com/','').replace('https://i.redd.it/','')
+print('File Name:',fileName)
 with open(fileName,'wb') as f:
     response = requests.get(submission.url)
     f.write(response.content)
+print('Downloaded:',submission.url)
 img = im.upload_image(fileName)
-img.submit_to_gallery(title=submission.title)
+submit = img.submit_to_gallery(title=submission.title)
+print('Submitted To Gallery:','https://imgur.com/gallery/'+str(submit).replace('<Gallery_image ','').replace('>',''))#wtf lmao
 os.remove(fileName)
+print('Deleted',fileName)
