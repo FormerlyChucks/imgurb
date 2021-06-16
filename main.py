@@ -33,6 +33,6 @@ with open(fileName,'wb') as f:
 print('Downloaded:',submission.url)
 img = im.upload_image(fileName)
 submit = img.submit_to_gallery(title=submission.title)
-print('Submitted To Gallery:','https://imgur.com/gallery/'+str(submit).replace('<Gallery_image ','').replace('>',''))#wtf lmao
+print('Submitted To Gallery:','https://imgur.com/gallery/'+submit.id)
 os.remove(fileName)
 print('Deleted',fileName)
