@@ -29,4 +29,4 @@ Repost old reddit posts to imgur for imaginary internet points 🤤
 
 **Run the bot:**
 
-    python3 main.py
+    I recommend using cron to schedule the bot to run to your liking :)
