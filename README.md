@@ -27,6 +27,4 @@ Repost old reddit posts to imgur for imaginary internet points 🤤
 - `subs` should be a list of subs you wish to repost from
 - `imgur_id`
 
-**Run the bot:**
-
-    I recommend using cron to schedule the bot to run to your liking :)
+I recommend using cron to schedule the bot to run to your liking :)
