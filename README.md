@@ -25,6 +25,6 @@ Repost old reddit posts to imgur for imaginary internet points 🤤
 - `client_secret` is your reddit client secret
 - `user_agent` should be a short description about your bot
 - `subs` should be a list of subs you wish to repost from
-- `imgur_id`
+- `imgur_id` is your imgur client id
 
 I recommend using cron to schedule the bot to run to your liking :)
