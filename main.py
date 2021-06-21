@@ -1,12 +1,5 @@
 import praw, random, webbrowser, pyimgur, os, requests, yaml
 
-client_id = ''
-client_secret = ''
-user_agent = ''
-imgur_id = ''
-subs = []
-domains = ['i.redd.it','i.imgur.com']
-
 with open("config.yaml") as cf:
     config = yaml.safe_load(cf)
 
@@ -25,7 +18,7 @@ except FileNotFoundError:
 reddit = praw.Reddit(client_id=cf["client_id"],client_secret=cf["client_secret"],user_agent=cf["user_agent"])
 subreddit = reddit.subreddit(random.choice(cf["subs"]))
 submissions = list(subreddit.top('all', limit=1000))
-submissions = [submission for submission in submissions if submission.domain in domains and '.gifv' not in submission.url and submission.over_18==False and len(submission.title)<=225]
+submissions = [submission for submission in submissions if submission.domain in cf["domains"] and '.gifv' not in submission.url and submission.over_18==False and len(submission.title)<=225]
 submission = random.choice(submissions)
 print('Submission ID:',submission.id)
 fileName = submission.url.replace('https://i.imgur.com/','').replace('https://i.redd.it/','')
