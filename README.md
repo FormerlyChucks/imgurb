@@ -19,12 +19,12 @@ Repost old reddit posts to imgur for imaginary internet points 🤤
 - You can get your Imgur credentials from [here](https://api.imgur.com/oauth2/addclient)
 - Follow [James Briggs' uide](https://towardsdatascience.com/how-to-use-the-reddit-api-in-python-5e05ddfd1e5c) to get your reddit API keys
 
-**Edit lines 3-7:**
+**Edit The YAML File:**
 
+- `imgur_id` is your imgur client id
 - `client_id` is your reddit client ID
 - `client_secret` is your reddit client secret
 - `user_agent` should be a short description about your bot
 - `subs` should be a list of subs you wish to repost from
-- `imgur_id` is your imgur client id
 
 I recommend using cron to schedule the bot to run to your liking :)
