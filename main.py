@@ -18,11 +18,11 @@ except FileNotFoundError:
     access_token, refresh_token = im.exchange_pin(pin)
     with open('tokens.txt', 'w') as t:
         t.write(f'{access_token} {refresh_token}')
-    
+
 reddit = praw.Reddit(client_id=client_id,client_secret=client_secret,user_agent=user_agent)
 subreddit = reddit.subreddit(random.choice(subs))
 submissions = list(subreddit.top('all', limit=1000))
-submissions = [submission for submission in submissions if submission.domain in domains and '.gifv' not in submission.url and submission.over_18==False]
+submissions = [submission for submission in submissions if submission.domain in domains and '.gifv' not in submission.url and submission.over_18==False and len(submission.title)<=225]
 submission = random.choice(submissions)
 print('Submission ID:',submission.id)
 fileName = submission.url.replace('https://i.imgur.com/','').replace('https://i.redd.it/','')
